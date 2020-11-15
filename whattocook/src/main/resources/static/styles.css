@@ -1,0 +1,58 @@
+    body
+    {
+        font-family: 'Alegreya Sans SC', sans-serif;
+        background-color: #c2cfff;
+    }
+
+    .menu
+    {
+        background-color: #ffc2e0;
+        margin: 50px 20px;
+        width: 320px;
+        padding: 10px 20px;
+        border: 3px groove #d4689c;
+        border-radius:3px;
+    }
+
+    .header
+    {
+        width: 650px;
+        margin: 50px;
+        padding: 10px;
+        background-color: white;
+    }
+
+    .flex-container
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .button
+    {
+        background-color: #ffc2e0;
+        width: 100%;
+        padding: 7px;
+        font-family: 'Alegreya Sans SC', sans-serif;
+        border-color: #e089b3;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        height: 50px;
+    }
+
+    .button:hover
+    {
+        background-color: #ffe0ef;
+    }
+
+    .text
+    {
+        margin-bottom: 40px;
+    }
+
+    .show
+    {
+        display: none;
+    }

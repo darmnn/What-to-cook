@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../static/styles.css" th:href="@{/styles.css}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital@1&display=swap" rel="stylesheet">
+<body>
+<script type = "text/javascript">
+    function display()
+    {
+        let elements = document.querySelectorAll('.button:active + .show');
+
+        for (let elem of elements)
+        {
+            if(elem.style.display == "none")
+                elem.style.display = "block";
+            else elem.style.display = "none";
+        }
+    }
+</script>
+
+<div class = "flex-container">
+    <div class = "menu">
+    <div class = "text">Выберите ваши ингредиенты:</div>
+        <th:block th:each="el : ${products}">
+            <button  onmousedown="display()" class="button" th:text = "${el.category}"></button>
+            <div class = "show" >
+                <th:block th:each="prods : ${el.productList}">
+                    <input type ="checkbox" th:text="${prods}"/>
+                </th:block>
+            </div>
+        </th:block>
+
+    </div>
+    <div class = "header">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+</div>
+
+
+</body>
+</html>
