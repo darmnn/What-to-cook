@@ -1,24 +1,9 @@
 package by.company.whattocook.controllers;
 
-import by.company.whattocook.ProductInfo;
-import models.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import repos.ProductsRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.print.attribute.HashAttributeSet;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 @Controller
 public class MainController {
