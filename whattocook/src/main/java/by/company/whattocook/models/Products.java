@@ -14,7 +14,7 @@ public class Products
     private Integer id;
 
     private String category;
-    private ArrayList<String> productList;
+    private String productList;
 
     public Integer getId() {
         return id;
@@ -24,7 +24,7 @@ public class Products
         return category;
     }
 
-    public ArrayList<String> getProducts() {
+    public String getProducts() {
         return productList;
     }
 
@@ -36,7 +36,7 @@ public class Products
         this.category = category;
     }
 
-    public void setProducts(ArrayList<String> products) {
+    public void setProducts(String products) {
         this.productList = products;
     }
 }

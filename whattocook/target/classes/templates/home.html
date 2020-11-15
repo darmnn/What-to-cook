@@ -25,9 +25,9 @@
     <div class = "menu">
     <div class = "text">Выберите ваши ингредиенты:</div>
         <th:block th:each="el : ${products}">
-            <button  onmousedown="display()" class="button" th:text = "${el.category}"></button>
+            <button  onmousedown="display()" class="button" th:text = "${el.key}"></button>
             <div class = "show" >
-                <th:block th:each="prods : ${el.productList}">
+                <th:block th:each="prods : ${el.value}">
                     <input type ="checkbox" th:text="${prods}"/>
                 </th:block>
             </div>
