@@ -17,9 +17,24 @@
     .header
     {
         width: 650px;
-        margin: 50px;
+        margin: 50px 50px 0px 50px;
         padding: 10px;
         background-color: white;
+    }
+
+    .content
+    {
+        width: 650px;
+        background-color: #fdffba;
+        margin: 25px 50px;
+        padding: 15px;
+    }
+
+    .recipe
+    {
+        background-color: white;
+        padding: 10px;
+        margin-bottom: 15px;
     }
 
     .flex-container
@@ -40,6 +55,13 @@
         border-left: none;
         border-right: none;
         height: 50px;
+        outline: none;
+    }
+
+    .button:active,
+    .button:focus
+    {
+        outline: none;
     }
 
     .button:hover
@@ -55,4 +77,39 @@
     .show
     {
         display: none;
+    }
+
+    a
+    {
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .full_text
+    {
+        margin-top: 10px;
+        display: none;
+    }
+
+    .button1
+    {
+        color: blue;
+        text-decoration: underline;
+        border: none;
+        outline: none;
+        background-color: white;
+        font-family: 'Alegreya Sans SC', sans-serif;
+        font-size: 1em;
+    }
+
+    .button1:hover
+    {
+        color: red;
+    }
+
+    .button1:active,
+    .button1:focus
+    {
+        border: none;
+        outline: none;
     }

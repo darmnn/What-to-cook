@@ -4,38 +4,73 @@
     <title th:text="${title}" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="../static/styles.css" th:href="@{/styles.css}" rel="stylesheet" />
+    <link type="text/css" th:href="@{/styles.css}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital@1&display=swap" rel="stylesheet">
+</head>
 <body>
 <script type = "text/javascript">
     function display()
     {
-        let elements = document.querySelectorAll('.button:active + .show');
+        let elem = document.querySelector('.button:active + .show');
 
-        for (let elem of elements)
-        {
-            if(elem.style.display == "none")
-                elem.style.display = "block";
-            else elem.style.display = "none";
-        }
+         if(elem.style.display == "none")
+          {
+             elem.style.display = "block";
+             elem.style.padding= '10px';
+             elem.style.fontSize = '0.9em';
+          }
+          else elem.style.display = "none";
+    }
+
+    function display1()
+    {
+        let elem = document.querySelector('.button1:hover + .short_text + .full_text');
+
+         if(elem.style.display == "none")
+         {
+            elem.style.display = "block";
+         }
+         else elem.style.display = "none";
     }
 </script>
 
 <div class = "flex-container">
-    <div class = "menu">
-    <div class = "text">Выберите ваши ингредиенты:</div>
-        <th:block th:each="el : ${products}">
-            <button  onmousedown="display()" class="button" th:text = "${el.key}"></button>
-            <div class = "show" >
-                <th:block th:each="prods : ${el.value}">
-                    <input type ="checkbox" th:text="${prods}"/>
+        <div class = "menu">
+            <div class = "text">Выберите ваши ингредиенты:</div>
+            <form th:action = "@{search}" method="post">
+            <th:block th:each="el : ${products}">
+                <button type = "button" onmousedown="display()" class="button" th:text = "${el.key}"></button>
+                <div class = "show" >
+
+                    <th:block th:each="prods : ${el.value}">
+
+                        <input type ="checkbox" name = "selectedItems" th:value = "${prods}" th:text="${prods}"/>
+
+                    </th:block>
+
+                </div>
+            </th:block>
+
+                <input type = "submit"></input>
+            </form>
+        </div>
+
+
+    <div>
+    <div class = "header">
+            Этот сайт посвящен поиску рецептов по имеющимся у вас в холодильнике продуктам! Не знаете, что приготовить, лень задумываться и вспоминать рецепты? Теперь эта проблема решена: просто отметьте галочкой те продукты, которые у вас уже есть, а данный сервис предложит вам разнообразные варианты блюд из этих продуктов
+    </div>
+
+            <div class = "content" >
+                <th:block th:each = "el : ${recipes}">
+                <div class = "recipe">
+                    <button class = "button1" onmousedown="display1()" th:text = "${el.name}"></button>
+                    <div class = "short_text" th:text = "${el.annotation}"></div>
+                    <div class = "full_text" th:text = "${el.recipe}"></div>
+                </div>
                 </th:block>
             </div>
-        </th:block>
 
-    </div>
-    <div class = "header">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </div>
 </div>
 
