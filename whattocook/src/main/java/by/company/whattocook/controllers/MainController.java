@@ -56,10 +56,15 @@ public class MainController {
 
             if(productsForSearch != null)
             {
-                Collections.sort(productList);
-                Collections.sort(productsForSearch);
+                boolean b = true;
+                for(String prod : productList)
+                {
+                    if(!productsForSearch.contains(prod))
+                        b = false;
+                }
 
-                if (productList.equals(productsForSearch)) recipesInfo.add(recipe);
+                if(b)
+                    recipesInfo.add(recipe);
             }
         }
 

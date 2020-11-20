@@ -51,7 +51,7 @@
                 </div>
             </th:block>
 
-                <input type = "submit"></input>
+                <button class = "search" type = "submit">Поиск</button>
             </form>
         </div>
 
@@ -62,6 +62,7 @@
     </div>
 
             <div class = "content" >
+                <div class = "text">Найденные рецепты:</div>
                 <th:block th:each = "el : ${recipes}">
                 <div class = "recipe">
                     <button class = "button1" onmousedown="display1()" th:text = "${el.name}"></button>

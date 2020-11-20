@@ -113,3 +113,32 @@
         border: none;
         outline: none;
     }
+
+    .search
+    {
+        margin-top: 25px;
+        margin-left: 80px;
+        width: 160px;
+        height: 30px;
+        background-color: #f7f7f7;
+        font-family: 'Alegreya Sans SC', sans-serif;
+        border: 1.5px groove #d9d9d9;
+        border-radius:3px;
+        outline: none;
+    }
+
+    .search:active,
+    .search:focus
+    {
+        outline: none;
+    }
+
+    .search:hover
+    {
+        background-color: #ebebeb;
+    }
+
+    span
+    {
+        padding-bottom: 15px;
+    }
